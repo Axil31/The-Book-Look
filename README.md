@@ -7,10 +7,11 @@ Download the code(zip folder) and store it locally on your machine.
 Extract the zip folder at a location of your choice.
 
 # Step 3
-If you do not have Node.js and npm installed on your machine you can download and install it from https://nodejs.org/en/download/
+If you do not have Node.js and npm installed on your machine you can download and install it from https://nodejs.org/en/download/<br/>
+
 To test that you have Node.js and npm correctly installed on your machine you can type 
 ### `node --version` and `npm --version`
-on a terminal or command prompt window.
+on a terminal or command prompt window.<br/>
 ***Note: npm is included with Node.js***
 
 # Step 4
