@@ -11,7 +11,7 @@ If you do not have Node.js and npm installed on your machine you can download an
 To test that you have Node.js and npm correctly installed on your machine you can type 
 ### `node --version` and `npm --version`
 on a terminal or command prompt window.
-Note : npm is included with Node.js
+***Note: npm is included with Node.js***
 
 # Step 4
 Open a terminal or a command prompt window and navigate to the folder that you had created in step 2. Now type 
