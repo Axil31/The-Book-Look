@@ -27,26 +27,26 @@ In a few minutes the development server will start and you would be able to see 
 # Sample data for testing
 
 # User login credentials
-Email: axil3108@gmail.com
+Email: axil3108@gmail.com<br/>
 Password: zxcvbnm
 
-Email: 201701220@daiict.ac.in
+Email: 201701220@daiict.ac.in<br/>
 Password: zxcvbnm
 
 # Vendor login credentials
-Email: btechproj2021@gmail.com
+Email: btechproj2021@gmail.com<br/>
 Password: 12345678
 
 # Admin login credentials
-The Admin can login by navigating to the link http://localhost:3000/admin.
-Email: projectadmin@gmail.com
+The Admin can login by navigating to the link http://localhost:3000/admin.<br/>
+Email: projectadmin@gmail.com<br/>
 Password: zxcvbnm
 
 # Add book
-ISBN: 9780241970560
-ISBN: 9780805210408
-ISBN: 9780812988406
-ISBN: 9781538719640
+ISBN: 9780241970560<br/>
+ISBN: 9780805210408<br/>
+ISBN: 9780812988406<br/>
+ISBN: 9781538719640<br/>
 ISBN: 9780143418658
 
 # Sign up
