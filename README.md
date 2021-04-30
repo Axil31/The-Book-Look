@@ -23,3 +23,33 @@ and hit enter. This will install some dependencies and could take some time.
 After step 4 is completed run the command 
 ### `npm start` 
 In a few minutes the development server will start and you would be able to see the Web Application on  http://localhost:3000 in your browser.
+
+# Sample data for testing
+
+# User login credentials
+Email: axil3108@gmail.com
+Password: zxcvbnm
+
+Email: 201701220@daiict.ac.in
+Password: zxcvbnm
+
+# Vendor login credentials
+Email: btechproj2021@gmail.com
+Password: 12345678
+
+# Admin login credentials
+The Admin can login by navigating to the link http://localhost:3000/admin.
+Email: projectadmin@gmail.com
+Password: zxcvbnm
+
+# Add book
+ISBN: 9780241970560
+ISBN: 9780805210408
+ISBN: 9780812988406
+ISBN: 9781538719640
+ISBN: 9780143418658
+
+# Sign up
+All the fields are mandatory and a working email will be required as email verification will be done.
+
+
