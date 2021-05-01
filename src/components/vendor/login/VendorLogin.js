@@ -4,15 +4,39 @@ import { Link, Redirect } from "react-router-dom";
 import "./login-styles.css";
 import firebase from "firebase/app";
 import "firebase/auth";
+import useFirestore from "../../../hooks/useFirestore";
+import { store } from "react-notifications-component";
 const db = fire.firestore();
 
 const VendorLogin = ({ success, setSuccess, setVendor, setAdmin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const users = useFirestore("users");
 
   function handleLogin(e) {
     e.preventDefault();
+
+    for (const user of users) {
+      if (user.email == email) {
+        store.addNotification({
+          title: "Access denied",
+          message: "Unauthorized access",
+          type: "warning",
+          insert: "top",
+          container: "top-center",
+          animationIn: ["animate__animated", "animate__fadeIn"],
+          animationOut: ["animate__animated", "animate__fadeOut"],
+          dismiss: {
+            duration: 5000,
+            onScreen: false,
+          },
+        });
+        setEmail("");
+        setPassword("");
+        return;
+      }
+    }
 
     firebase
       .auth()
