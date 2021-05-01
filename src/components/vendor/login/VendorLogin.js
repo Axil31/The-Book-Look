@@ -13,6 +13,7 @@ const VendorLogin = ({ success, setSuccess, setVendor, setAdmin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const users = useFirestore("users");
+  const vendors = useFirestore("vendors");
 
   function handleLogin(e) {
     e.preventDefault();
@@ -35,6 +36,29 @@ const VendorLogin = ({ success, setSuccess, setVendor, setAdmin }) => {
         setEmail("");
         setPassword("");
         return;
+      }
+    }
+
+    for (const vendor of vendors) {
+      if (vendor.email == email) {
+        if (vendor.status == "inactive") {
+          store.addNotification({
+            title: "Access denied",
+            message: "Your account has been blocked by the Admin",
+            type: "danger",
+            insert: "top",
+            container: "top-center",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+              duration: 5000,
+              onScreen: false,
+            },
+          });
+          setEmail("");
+          setPassword("");
+          return;
+        }
       }
     }
 
