@@ -14,6 +14,7 @@ const Login = ({ success, setSuccess, setVendor, setAdmin }) => {
   const [error, setError] = useState(null);
   const [state, setState] = useState(false);
   const vendors = useFirestore("vendors");
+  const users = useFirestore("users");
 
   function handleLogin(e) {
     e.preventDefault();
@@ -37,6 +38,29 @@ const Login = ({ success, setSuccess, setVendor, setAdmin }) => {
         setEmail("");
         setPassword("");
         return;
+      }
+    }
+
+    for (const user of users) {
+      if (user.email == email) {
+        if (user.status == "inactive") {
+          store.addNotification({
+            title: "Access denied",
+            message: "Your account has been blocked by the Admin",
+            type: "danger",
+            insert: "top",
+            container: "top-center",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+              duration: 5000,
+              onScreen: false,
+            },
+          });
+          setEmail("");
+          setPassword("");
+          return;
+        }
       }
     }
 
